@@ -6,5 +6,11 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class Price {
-    Long net,totalPrice, totalGst, cGst,sGst;
+
+    private Double net;
+    private Double totalPrice;
+    private Double totalGst;
+    private Double cGst;
+    private Double sGst;
+
 }

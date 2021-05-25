@@ -13,25 +13,25 @@ import java.util.UUID;
 @Repository
 public class PlansDao {
 
-    public List<Plans> getPlans(){
+    public List<Plans> getPlans() {
         return new ArrayList<>(
 
-                Collections.singleton(new Plans("Vennela-500", "Unlimited plan", getPrice(555L),
+                Collections.singleton(new Plans("Vennela-500", "Unlimited plan", getPrice(555D),
                         new Benefits("1GB/Day", 1000L, 100, "Individual"), UUID.randomUUID()))
         );
 
     }
 
 
-private Price getPrice(Long net){
+    private Price getPrice(Double net) {
 
-        Long cGst = (net*9)/100;
-        Long sGst = (net*9)/100;
-        Long totalGst = sGst+cGst;
-        Long totalPrice = net+totalGst;
+        Double cGst = (net * 9) / 100;
+        Double sGst = (net * 9) / 100;
+        Double totalGst = sGst + cGst;
+        Double totalPrice = net + totalGst;
 
-        return new Price(net,totalPrice,totalGst,cGst,sGst);
-}
+        return new Price(net, totalPrice, totalGst, cGst, sGst);
+    }
 
 
 }
