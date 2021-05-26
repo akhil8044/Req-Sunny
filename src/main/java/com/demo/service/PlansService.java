@@ -1,10 +1,10 @@
 package com.demo.service;
 
+import com.demo.Model.PlanType;
 import com.demo.Model.Plans;
 import com.demo.dao.PlansDao;
-import com.demo.exceptions.PlanExceptions;
 import com.demo.exceptions.ErrorMessage;
-import io.swagger.annotations.ApiOperation;
+import com.demo.exceptions.PlanExceptions;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -18,14 +18,19 @@ public class PlansService {
 
 
     public List<Plans> getPlans(String planType) {
-        if(!(planType.equalsIgnoreCase("simo") || planType.equalsIgnoreCase("phones")))
+
+        if (!(planType.equalsIgnoreCase(PlanType.SIM_ONLY_PLANS.getPlanType())
+                || planType.equalsIgnoreCase(PlanType.SIM_AND_PHONE_PLANS.getPlanType())))
         {
             throw new PlanExceptions(ErrorMessage.WRONG_PLANTYPE.getMessage());
         }
-        if (planType.equalsIgnoreCase("simo"))
+
+        if (PlanType.SIM_ONLY_PLANS.getPlanType().equalsIgnoreCase(planType))
+        {
             return plansDao.getPlans();
-        else
+        } else
             return null;
+
 
     }
 }

@@ -1,10 +1,9 @@
 package com.demo.Model;
 
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import lombok.*;
-import org.springframework.web.bind.annotation.ModelAttribute;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 
 import java.util.UUID;
 

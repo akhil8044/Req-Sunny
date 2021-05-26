@@ -26,6 +26,9 @@ public class DemoApplicationController {
     @ApiOperation(value = "Find the list of plans", response = List.class)
     public List<Plans> getPlans( @ApiParam(value = "Type of plan you need to get the " +
             "details for", required = true) @PathVariable(name = "planType") String planType){
+
+       log.info("Plan type {} selected", planType);
+        log.trace("getPlan method called");
         return plansService.getPlans(planType);
     }
 
