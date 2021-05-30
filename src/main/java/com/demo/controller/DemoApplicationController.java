@@ -1,7 +1,7 @@
 package com.demo.controller;
 
-
-import com.demo.Model.Plans;
+import com.demo.model.PlanType;
+import com.demo.model.Plans;
 import com.demo.service.PlansService;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -15,25 +15,22 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/Demo")
+@RequestMapping("/demo")
 @RequiredArgsConstructor
 @Slf4j
 public class DemoApplicationController {
 
-    private final PlansService plansService;
+  private final PlansService plansService;
 
-    @GetMapping(value = "/getPlans/{planType}")
-    @ApiOperation(value = "Find the list of plans", response = List.class)
-    public List<Plans> getPlans( @ApiParam(value = "Type of plan you need to get the " +
-            "details for", required = true) @PathVariable(name = "planType") String planType){
+  @GetMapping(value = "/getPlans/{planType}")
+  @ApiOperation(value = "Find the list of plans", response = List.class)
+  public List<Plans> getPlans(@ApiParam(value = "Type of plan you need to get the " +
+    "details for", required = true) @PathVariable(name = "planType") PlanType planType) {
 
-       log.info("Plan type {} selected", planType);
-        log.trace("getPlan method called");
-        return plansService.getPlans(planType);
-    }
+    log.info("Plan type {} selected", planType);
+    return plansService.getPlans(planType);
 
-
-
+  }
 
 
 }
