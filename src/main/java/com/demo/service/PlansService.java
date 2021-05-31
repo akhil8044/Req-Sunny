@@ -1,6 +1,6 @@
 package com.demo.service;
 
-import com.demo.dao.PlansDao;
+import  com.demo.dao.PlansDao;
 import com.demo.exceptions.ErrorMessage;
 import com.demo.exceptions.PlanExceptions;
 import com.demo.model.PlanType;
@@ -18,11 +18,12 @@ public class PlansService {
 
   public List<Plans> getPlans(PlanType planType) {
     switch (planType) {
-      case SIM_ONLY_PLANS:
+      case SIMO:
         return plansDao.getPlans();
-      case SIM_AND_PHONE_PLANS:
+      case PHONE:
       default:
         throw new PlanExceptions(ErrorMessage.WRONG_PLANTYPE.getMessage());
+
     }
   }
 }
