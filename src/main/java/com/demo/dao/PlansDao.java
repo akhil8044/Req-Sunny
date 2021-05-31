@@ -13,7 +13,7 @@ public class PlansDao {
 
   public List<Plans> getPlans() {
     return List.of(new Plans("Vennela-500", "Unlimited plan", getPrice(555D),
-        new Benefits("1GB/Day", 1000L, 100, "Individual"), UUID.randomUUID()));
+            new Benefits("1GB/Day", 1000L, 100, "Individual"), UUID.randomUUID()));
 
   }
 

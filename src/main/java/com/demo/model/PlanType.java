@@ -6,5 +6,4 @@ import lombok.AllArgsConstructor;
 public enum PlanType {
   SIMO,
   PHONE
-
 }

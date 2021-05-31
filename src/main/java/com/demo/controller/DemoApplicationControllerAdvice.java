@@ -15,13 +15,13 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 public class DemoApplicationControllerAdvice extends ResponseEntityExceptionHandler {
 
 
-    @ExceptionHandler
-    public ResponseEntity<ErrorResponse> DemoException(PlanExceptions planExceptions){
-        ErrorResponse errorResponse = new ErrorResponse(planExceptions.getMessage(), ErrorMessage.WRONG_PLANTYPE.getErrorCode(),
-                                            ErrorMessage.WRONG_PLANTYPE.getDescription());
-        log.info("Wrong Plan type entered by user");
-        return ResponseEntity.badRequest().body(errorResponse);
+  @ExceptionHandler
+  public ResponseEntity<ErrorResponse> DemoException(PlanExceptions planExceptions) {
+    ErrorResponse errorResponse = new ErrorResponse(planExceptions.getMessage(), ErrorMessage.WRONG_PLAN_TYPE.getErrorCode(),
+            ErrorMessage.WRONG_PLAN_TYPE.getDescription());
+    log.info("Wrong Plan type entered by user");
+    return ResponseEntity.badRequest().body(errorResponse);
 
 
-    }
+  }
 }

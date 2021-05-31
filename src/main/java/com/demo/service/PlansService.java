@@ -1,6 +1,6 @@
 package com.demo.service;
 
-import  com.demo.dao.PlansDao;
+import com.demo.dao.PlansDao;
 import com.demo.exceptions.ErrorMessage;
 import com.demo.exceptions.PlanExceptions;
 import com.demo.model.PlanType;
@@ -22,7 +22,7 @@ public class PlansService {
         return plansDao.getPlans();
       case PHONE:
       default:
-        throw new PlanExceptions(ErrorMessage.WRONG_PLANTYPE.getMessage());
+        throw new PlanExceptions(ErrorMessage.WRONG_PLAN_TYPE.getMessage());
 
     }
   }

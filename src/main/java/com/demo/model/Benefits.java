@@ -10,12 +10,12 @@ import lombok.Data;
 @ApiModel(description = "Benefits with the plan")
 public class Benefits {
 
-    private String data;
-    private Long calls;
-    private int messages;
+  private String data;
+  private Long calls;
+  private int messages;
 
-    @ApiModelProperty(notes = "If mobile phone included")
-    private String mInclude;
+  @ApiModelProperty(notes = "If mobile phone included")
+  private String mInclude;
 
 
 }
