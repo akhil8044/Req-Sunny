@@ -9,7 +9,6 @@ import com.demo.model.Price;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import org.apache.http.HttpHost;
-import org.aspectj.lang.annotation.Before;
 import org.elasticsearch.action.index.IndexRequest;
 import org.elasticsearch.action.index.IndexResponse;
 import org.elasticsearch.client.RequestOptions;
@@ -22,7 +21,6 @@ import org.elasticsearch.common.xcontent.XContentType;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 
