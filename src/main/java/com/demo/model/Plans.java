@@ -5,7 +5,6 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Generated;
-import org.aspectj.lang.annotation.Before;
 
 import java.util.UUID;
 

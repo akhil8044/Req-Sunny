@@ -18,6 +18,7 @@ import org.elasticsearch.client.indices.CreateIndexRequest;
 import org.elasticsearch.client.indices.CreateIndexResponse;
 import org.elasticsearch.common.settings.Settings;
 import org.elasticsearch.common.xcontent.XContentType;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -28,8 +29,9 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class PlansService {
     private int counter;
+    private int counter1=0;
 
-    private RestHighLevelClient client = new RestHighLevelClient(
+    private final RestHighLevelClient client = new RestHighLevelClient(
             RestClient.builder(new HttpHost("localhost", 9200, "http")));
 
     private final PlansDao plansDao;
