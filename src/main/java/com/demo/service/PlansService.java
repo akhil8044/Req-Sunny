@@ -33,6 +33,9 @@ public class PlansService {
     private int counter2=0;
     private int counter3=0;
     private int counter4=0;
+    private int counter5=0;
+    private int counter6=0;
+    private int counter7=0;
 
     private final RestHighLevelClient client = new RestHighLevelClient(
             RestClient.builder(new HttpHost("localhost", 9200, "http")));
