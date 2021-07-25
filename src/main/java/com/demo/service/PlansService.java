@@ -29,7 +29,7 @@ import java.util.UUID;
 public class PlansService {
     private int counter;
 
-    RestHighLevelClient client = new RestHighLevelClient(
+    private RestHighLevelClient client = new RestHighLevelClient(
             RestClient.builder(new HttpHost("localhost", 9200, "http")));
 
     private final PlansDao plansDao;
